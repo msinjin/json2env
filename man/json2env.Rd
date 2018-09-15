@@ -18,6 +18,11 @@ when a formal of the same name is declared.}
 to the environment of the calling function (\code{parent.frame()});
 however, specific environments could be named.}
 }
+\value{
+Note that \code{json2env} does not have a return value and so does
+  not need to be assigned (\code{<-}). Rather the side effect of \code{json2env}
+  is being used to assign names with values to an environment.
+}
 \description{
 \code{json2env} parses arguments in javascript object notation (JSON) and
 loads them into an environment (typically that of the enclosing function).

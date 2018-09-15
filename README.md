@@ -3,7 +3,7 @@ An R package that parses javascript object notation (JSON) formatted arguments i
 
 
 ## Motivation
-Sometimes it is convinient for R-function arguments to be a JSON named list, rather than properly declared formals. For example: web applications where R is in a pipeline (possibly as an [Rserve](https://www.rforge.net/Rserve/) instance) with other web technologies that use JSON for passing information.
+Sometimes it is convenient for R-function arguments to be a JSON named list, rather than properly declared formals. For example: web applications where R is in a pipeline (possibly as an [Rserve](https://www.rforge.net/Rserve/) instance) with other web technologies that use JSON for passing information.
 
 ## Install
 
@@ -23,3 +23,4 @@ my_fun <- function(json_args, a = 1, b = 2, d = 6, replace = T) {
 my_fun(json_args) # [1] 3 4 5 6
 my_fun(json_args, replace = F) # [1] 1 2 5 6
 ```
+Note that `json2env` does not have a return value and so does not need to be assigned (`<-`).

@@ -21,7 +21,9 @@
 #'   however, specific environments could be named.
 #'
 #' @seealso \code{\link{list2env}}, \code{\link{fromJSON}}, \code{\link{toJSON}}
-#'
+#' @return Note that \code{json2env} does not have a return value and so does
+#'   not need to be assigned (\code{<-}). Rather the side effect of \code{json2env}
+#'   is being used to assign names with values to an environment.
 #' @examples
 #' json_args <- '{"a" : 3, "b" : 4, "c" : 5}'
 #'
