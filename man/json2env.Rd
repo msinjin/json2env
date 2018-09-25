@@ -16,7 +16,9 @@ when a formal of the same name is declared.}
 
 \item{envir}{The environment JSON arguments are to be loaded into. Defaults
 to the environment of the calling function (\code{parent.frame()});
-however, specific environments could be named.}
+however, specific environments could be named such as the current
+environment (\code{environment()}) or the global environment
+(\code{.GlobalEnv}).}
 }
 \value{
 Note that \code{json2env} does not have a return value and so does

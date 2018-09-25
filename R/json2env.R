@@ -8,6 +8,7 @@
 #' particularly useful in web applications where it is desireable for a function
 #' to receive arguments in JSON format.
 #'
+#' @importFrom RJSONIO isValidJSON
 #' @importFrom jsonlite fromJSON
 #' @export json2env
 #'
@@ -18,7 +19,9 @@
 #'   when a formal of the same name is declared.
 #' @param envir The environment JSON arguments are to be loaded into. Defaults
 #'   to the environment of the calling function (\code{parent.frame()});
-#'   however, specific environments could be named.
+#'   however, specific environments could be named such as the current
+#'   environment (\code{environment()}) or the global environment
+#'   (\code{.GlobalEnv}).
 #'
 #' @seealso \code{\link{list2env}}, \code{\link{fromJSON}}, \code{\link{toJSON}}
 #' @return Note that \code{json2env} does not have a return value and so does
@@ -39,7 +42,7 @@ json2env <-
     function(json_args,
              replace = T,
              envir = parent.frame()) {
-        if (!isValidJSON(I(json_args))) {
+        if (!RJSONIO::isValidJSON(I(json_args))) {
             stop("json2env() was expecting json_args in JSON format.")
         }
         json_list <-
